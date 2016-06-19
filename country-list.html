@@ -1,0 +1,33 @@
+<main role="main">
+      <!-- Header -->
+      <div id="fh5co-intro">
+        <div class="container">
+              <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                  <input ng-model="query" type="text" class="form-control" placeholder="Search">
+                </div>
+              </form>
+          <div class="fh5co-spacer fh5co-spacer-sm"></div>
+          <h3>租借列表 </h3>
+            <div class="row">
+              <div class="media" ng-repeat="country in countries | filter:query">
+              <div class="media-left media-middle">
+                <a href="#/{{country.name}}">
+                  <img class="media-object" src="{{country.img}}" width="100px" heigth="100px">
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading"><a href="#/{{country.name}}">{{country.name}}</a></h4>
+                {{country.rent}}  出租人：{{country.author}}
+              </div>
+              <div class="media-right" ng-class="{
+        'color-red': country.popularity > 7, 
+        'color-blue': country.popularity > 4, 
+        'color-green': country.popularity > 0}">
+                人氣: {{country.popularity}}
+              </div>
+            </div>
+            </div>
+        </div>
+      </div>
+    </main>
