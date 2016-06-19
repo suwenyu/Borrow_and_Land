@@ -23,6 +23,8 @@
   	<link rel="stylesheet" href="css/easy-responsive-tabs.css">
   	<!-- Theme Style -->
   	<link rel="stylesheet" href="css/style.css">
+  	<link href="css/ihover.css" rel="stylesheet">
+  	
   
   <style>	
 	.carousel-inner > .item > img,
@@ -44,9 +46,17 @@
 
       countryApp.config(function($routeProvider) {
         $routeProvider.
+          when('/' ,{
+            templateUrl: 'home.html',
+            contoller : 'HomeCtrl'
+          }).
           when('/post' ,{
             templateUrl: 'post.html',
             contoller : 'PostCtrl'
+          }).
+          when('/login' ,{
+            templateUrl: 'login.html',
+            contoller : 'LoginCtrl'
           }).
           when('/list', {
             templateUrl: 'country-list.html',
@@ -56,10 +66,6 @@
             templateUrl: 'country-detail.html',
             controller: 'CountryDetailCtrl'
           }).
-          when('/' ,{
-            templateUrl: 'home.html',
-            contoller : 'HomeCtrl'
-          }).
           otherwise({
             redirectTo: '/'
           });
@@ -68,12 +74,20 @@
       countryApp.factory('countries', function($http){
         return {
           list: function(callback){
-            $http.get('https://suwenyu.github.io/Borrow-Lend/product.json').success(callback);
+            $http.get('https://suwenyu.github.io/Borrow_and_Land/product.json').success(callback);
           }
         };
       });
       
+      countryApp.controller('HomeCtrl', function ($scope, countries){
+        countries.list(function(countries) {
+          $scope.countries = countries;
+        });
+      });
+      
       countryApp.controller('PostCrtl' , function($scope, countries) {
+      });
+      countryApp.controller('LoginCtrl' , function($scope, countries) {
       });
       
       countryApp.controller('CountryListCtrl', function ($scope, countries){
@@ -82,16 +96,16 @@
         });
       });
       
-      countryApp.controller('HomeCtrl', function ($scope, countries){
-      });
+      
 
       countryApp.controller('CountryDetailCtrl', function ($scope, $routeParams, $http){
-        $http.get('https://suwenyu.github.io/Borrow-Lend/product.json').success(function(data) {
+        $http.get('https://suwenyu.github.io/Borrow_and_Land/product.json').success(function(data) {
           $scope.country = data.filter(function(entry){
             return entry.name === $routeParams.countryName
           })[0];
         });
       });
+
     </script>
   </head>
   <body>
@@ -125,7 +139,7 @@
 								<a href="#/post">張貼出租</a>
 							</li>
 						</ul>
-						<a href="#" id="myBtn" class="fh5co-nav-call-to-action js-fh5co-nav-call-to-action">LogIn</a>
+						<a href="#/login" id="myBtn" class="fh5co-nav-call-to-action js-fh5co-nav-call-to-action">LogIn</a>
 					</nav>
 				</div>
 				<!-- Main Nav -->
