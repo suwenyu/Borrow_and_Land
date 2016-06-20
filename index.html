@@ -122,7 +122,7 @@
       
       
 
-      countryApp.controller('CountryDetailCtrl', function ($scope, $routeParams, $http){
+      countryApp.controller('CountryDetailCtrl', function ($scope, $routeParams, $http , $location){
         $http.get('https://suwenyu.github.io/Borrow_and_Lend/product.json').success(function(data) {
           $scope.country = data.filter(function(entry){
             return entry.name === $routeParams.countryName
