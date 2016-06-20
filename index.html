@@ -3,7 +3,8 @@
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>租&借</title>
-    <script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.3/angular.min.js" data-semver="1.4.3"></script>
+    <script data-require="angular.js@1.2.x" src="http://code.angularjs.org/1.2.14/angular.js" data-semver="1.2.14"></script>
+    <script src="http://pc035860.github.io/angular-easyfb/angular-easyfb.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular-route.min.js"></script>
     	<!-- Google Webfont -->
@@ -30,7 +31,6 @@
     <script src="https://yandex.st/highlightjs/7.3/highlight.min.js"></script>
     
     <script src="https://pc035860.github.io/angular-highlightjs/angular-highlightjs.min.js"></script>
-    <script src="https://pc035860.github.io/angular-easyfb/angular-easyfb.min.js"></script>
     <!-- <script src="app.js"></script> -->
 
   
@@ -50,14 +50,16 @@
 	</style>
 
     <script>
-      var countryApp = angular.module('countryApp', ['ngRoute','ezfb', 'hljs']);
-      countryApp.config(function (ezfbProvider) {
-        ezfbProvider.setInitParams({
-          appId: '1586848154899930'
-        });
-      });
+      var countryApp = angular.module('countryApp', ['ezfb', 'ngRoute', 'hljs']);
 
-      countryApp.config(function($routeProvider) {
+      countryApp.config(function(ezfbProvider , $routeProvider) {
+
+
+        ezfbProvider.setInitParams({
+          appId: '1586848154899930',
+          version: 'v2.6'
+        });
+
         $routeProvider.
           when('/' ,{
             templateUrl: 'home.html',
