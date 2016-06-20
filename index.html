@@ -3,10 +3,11 @@
     <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>租&借</title>
-    <script data-require="angular.js@1.2.x" src="https://code.angularjs.org/1.2.14/angular.js" data-semver="1.2.14"></script>
+    <script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.3/angular.min.js" data-semver="1.4.3"></script>
+    <script data-require="angular-route@1.4.x" data-semver="1.4.3" src="https://code.angularjs.org/1.4.3/angular-route.min.js"></script>
     <script src="https://pc035860.github.io/angular-easyfb/angular-easyfb.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular-route.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular-route.min.js"></script> -->
     	<!-- Google Webfont -->
   	<link href='https://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
   	<!-- Themify Icons -->
@@ -53,7 +54,13 @@
       
       var countryApp = angular.module('countryApp', ['ezfb', 'ngRoute']);
 
-      countryApp.config(function($routeProvider) {
+      countryApp.config(function(ezfbProvider , $routeProvider) {
+
+
+        ezfbProvider.setInitParams({
+          appId: '386469651480295',
+          version: 'v2.6'
+        });
 
         $routeProvider.
           when('/' ,{
@@ -100,6 +107,8 @@
       });
       
       countryApp.controller('PostCrtl' , function($scope, countries) {
+      });
+      countryApp.controller('TestFBCtrl' , function($scope) {
       });
       countryApp.controller('LoginCtrl' , function($scope, countries) {
       });
@@ -205,15 +214,5 @@
 		<script src="js/google_map.js"></script>
 		<!-- Main JS -->
 		<script src="js/main.js"></script>
-
-
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v2.6&appId=955033104561849";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
   </body>
 </html>
