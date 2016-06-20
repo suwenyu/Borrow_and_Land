@@ -127,9 +127,9 @@
           $scope.country = data.filter(function(entry){
             return entry.name === $routeParams.countryName
           })[0];
-          console.log(country)
-          // $scope.absurl = $location.path('/' + data);
         });
+            test = $location.path();
+            console.log(test);
       });
 
     </script>
