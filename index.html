@@ -117,6 +117,7 @@
         countries.list(function(countries) {
           $scope.countries = countries;
         });
+
       });
       
       
@@ -126,6 +127,7 @@
           $scope.country = data.filter(function(entry){
             return entry.name === $routeParams.countryName
           })[0];
+          $scope.absurl = $location.path('/' + data);
         });
       });
 
