@@ -52,6 +52,19 @@
 	<div class="fh5co-spacer fh5co-spacer-md"></div>
 	
 	<div class="fb-comments" data-href="{{track.share_url}}" data-width="300px" data-numposts="5" data-colorscheme="light"></div>
+
+	<script>
+		var App = angular.module('countryApp', ['ezfb']);
+
+      App.config(function(ezfbProvider) {
+
+
+        ezfbProvider.setInitParams({
+          appId: '1586848154899930'
+        });
+      });
+	</script>
+
 </main>
 
 
