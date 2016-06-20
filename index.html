@@ -74,7 +74,7 @@
       countryApp.factory('countries', function($http){
         return {
           list: function(callback){
-            $http.get('https://suwenyu.github.io/Borrow_and_Land/product.json').success(callback);
+            $http.get('https://suwenyu.github.io/Borrow_and_Lend/product.json').success(callback);
           }
         };
       });
@@ -99,7 +99,7 @@
       
 
       countryApp.controller('CountryDetailCtrl', function ($scope, $routeParams, $http){
-        $http.get('https://suwenyu.github.io/Borrow_and_Land/product.json').success(function(data) {
+        $http.get('https://suwenyu.github.io/Borrow_and_Lend/product.json').success(function(data) {
           $scope.country = data.filter(function(entry){
             return entry.name === $routeParams.countryName
           })[0];
@@ -115,7 +115,7 @@
 			<div class="container">
 				<!-- Logo -->
 				<div id="fh5co-logo">
-					<a href="index.html">
+					<a href="#/">
 						<img src="images/logo1.png" alt="Work Logo">
 					</a>
 
