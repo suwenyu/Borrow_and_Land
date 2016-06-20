@@ -52,7 +52,7 @@
     <script>
       var countryApp = angular.module('countryApp', ['ngRoute','ezfb', 'hljs']);
 
-      .config(function (ezfbProvider) {
+      countryApp.config(function (ezfbProvider) {
         /**
          * Basic setup
          *
@@ -63,7 +63,7 @@
         });  
       })
 
-      .controller('MainCtrl', function($scope, ezfb, $window, $location, $q) {
+      countryApp.controller('TestFBCtrl', function($scope, ezfb, $window, $location, $q) {
   
   updateMe();
   
