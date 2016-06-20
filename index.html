@@ -63,6 +63,74 @@
         });  
       })
 
+      countryApp.config(function($routeProvider) {
+        $routeProvider.
+          when('/' ,{
+            templateUrl: 'home.html',
+            contoller : 'HomeCtrl'
+          }).
+          when('/fbtest' ,{
+            templateUrl: 'testfb.html',
+            contoller : 'TestFBCtrl'
+          }).
+          when('/post' ,{
+            templateUrl: 'post.html',
+            contoller : 'PostCtrl'
+          }).
+          when('/login' ,{
+            templateUrl: 'login.html',
+            contoller : 'LoginCtrl'
+          }).
+          when('/list', {
+            templateUrl: 'country-list.html',
+            controller: 'CountryListCtrl'
+          }).
+          when('/:countryName', {
+            templateUrl: 'country-detail.html',
+            controller: 'CountryDetailCtrl'
+          }).
+          otherwise({
+            redirectTo: '/'
+          });
+      });
+
+      countryApp.factory('countries', function($http){
+        return {
+          list: function(callback){
+            $http.get('https://suwenyu.github.io/Borrow_and_Lend/product.json').success(callback);
+          }
+        };
+      });
+      
+      countryApp.controller('HomeCtrl', function ($scope, countries){
+        countries.list(function(countries) {
+          $scope.countries = countries;
+        });
+      });
+      
+      countryApp.controller('PostCrtl' , function($scope, countries) {
+      });
+      countryApp.controller('LoginCtrl' , function($scope, countries) {
+      });
+      
+      countryApp.controller('CountryListCtrl', function ($scope, countries){
+        countries.list(function(countries) {
+          $scope.countries = countries;
+        });
+      });
+
+
+      
+      
+
+      countryApp.controller('CountryDetailCtrl', function ($scope, $routeParams, $http){
+        $http.get('https://suwenyu.github.io/Borrow_and_Lend/product.json').success(function(data) {
+          $scope.country = data.filter(function(entry){
+            return entry.name === $routeParams.countryName
+          })[0];
+        });
+      });
+
       countryApp.controller('TestFBCtrl', function($scope, ezfb, $window, $location, $q) {
   
   updateMe();
@@ -199,72 +267,6 @@
 
     }
   });
-
-      countryApp.config(function($routeProvider) {
-        $routeProvider.
-          when('/' ,{
-            templateUrl: 'home.html',
-            contoller : 'HomeCtrl'
-          }).
-          when('/fbtest' ,{
-            templateUrl: 'testfb.html',
-            contoller : 'TestFBCtrl'
-          }).
-          when('/post' ,{
-            templateUrl: 'post.html',
-            contoller : 'PostCtrl'
-          }).
-          when('/login' ,{
-            templateUrl: 'login.html',
-            contoller : 'LoginCtrl'
-          }).
-          when('/list', {
-            templateUrl: 'country-list.html',
-            controller: 'CountryListCtrl'
-          }).
-          when('/:countryName', {
-            templateUrl: 'country-detail.html',
-            controller: 'CountryDetailCtrl'
-          }).
-          otherwise({
-            redirectTo: '/'
-          });
-      });
-
-      countryApp.factory('countries', function($http){
-        return {
-          list: function(callback){
-            $http.get('https://suwenyu.github.io/Borrow_and_Lend/product.json').success(callback);
-          }
-        };
-      });
-      
-      countryApp.controller('HomeCtrl', function ($scope, countries){
-        countries.list(function(countries) {
-          $scope.countries = countries;
-        });
-      });
-      
-      countryApp.controller('PostCrtl' , function($scope, countries) {
-      });
-      countryApp.controller('LoginCtrl' , function($scope, countries) {
-      });
-      
-      countryApp.controller('CountryListCtrl', function ($scope, countries){
-        countries.list(function(countries) {
-          $scope.countries = countries;
-        });
-      });
-      
-      
-
-      countryApp.controller('CountryDetailCtrl', function ($scope, $routeParams, $http){
-        $http.get('https://suwenyu.github.io/Borrow_and_Lend/product.json').success(function(data) {
-          $scope.country = data.filter(function(entry){
-            return entry.name === $routeParams.countryName
-          })[0];
-        });
-      });
 
     </script>
   </head>
