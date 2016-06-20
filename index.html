@@ -50,15 +50,19 @@
 	</style>
 
     <script>
-      var countryApp = angular.module('countryApp', ['ezfb', 'ngRoute', 'hljs']);
+      var App = angular.module('countryApp', ['ezfb']);
 
-      countryApp.config(function(ezfbProvider , $routeProvider) {
+      App.config(function(ezfbProvider) {
 
 
         ezfbProvider.setInitParams({
-          appId: '1586848154899930',
-          version: 'v2.6'
+          appId: '1586848154899930'
         });
+      });
+      
+      var countryApp = angular.module('countryApp', ['ezfb', 'ngRoute']);
+
+      countryApp.config(function($routeProvider) {
 
         $routeProvider.
           when('/' ,{
