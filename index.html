@@ -51,6 +51,11 @@
 
     <script>
       var countryApp = angular.module('countryApp', ['ngRoute','ezfb', 'hljs']);
+      countryApp.config(function (ezfbProvider) {
+        ezfbProvider.setInitParams({
+          appId: '1586848154899930'
+        });
+      });
 
       countryApp.config(function($routeProvider) {
         $routeProvider.
