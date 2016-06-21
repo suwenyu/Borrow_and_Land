@@ -3,132 +3,156 @@
 		"name" : "iPhone",
 		"rent" : "$1/天",
 		"author" : "林昱任",
+		"post" : "find",
 		"state": 3,
 		"method" : "郵寄",
 		"number" : "1",
 		"img" : "img/product1.jpeg",
 		"popularity" : 4.5,
-		"location" :"台北市"
+		"location" :"台北市",
+		"explanation" : "非常實用，物美價廉，美觀養眼。"
 	},
 	{
 		"name" : "鋼琴",
 		"rent" : "$1000/天",
 		"author" : "蘇文毓",
+		"post" : "provide",
 		"state": 0,
 		"method" : "郵寄",
 		"number" : "100",
 		"img" : "img/product2.jpg",
 		"popularity" : 7.2,
-		"location" : "政治大學"
+		"location" : "政治大學",
+		"explanation" : "非常實用，物美價廉，美觀養眼。"
 	},
 	{
 		"name" : "大腦",
 		"rent" : "免費",
 		"author" : "蔡岳翰",
+		"post" : "provide",
 		"state": 8,
 		"method" : "宅配",
 		"number" : "2",
 		"img" : "img/product3.jpg",
 		"popularity" : 1.0,
-		"location" : "台北市動物園"
+		"location" : "台北市動物園",
+		"explanation" : "本人不常用到，幾乎全新。"
 	},
 	{
 		"name" : "內褲",
 		"rent" : "$10/天",
 		"author " : "蘇心平",
+		"post" : "find",
 		"state" : 10,
 		"method" : "面交",
 		"number" : "10",
 		"img" : "img/product4.jpg",
 		"popularity" : 9.0,
-		"location": "嘉義"
+		"location": "嘉義",
+		"explanation" : "真的好想要有內褲可以穿。"
 	},
 	{
 		"name" : "皮鞋",
 		"rent" : "$500/天",
 		"author" : "劉祐伸",
+		"post" : "find",
 		"state" : 1,
 		"method" : "面交",
 		"number" : "5",
 		"img" : "img/product5.jpeg",
 		"popularity" : 5.0,
-		"location": "新竹"
+		"location": "新竹",
+		"explanation" : "想要參加相親，但是找不到皮鞋，借個一雙。"
 	},
 	{
 		"name" : "西裝外套（藍）",
 		"rent" : "$10000/天",
 		"author" : "羅冠恩",
+		"post" :"provide",
 		"state" : 10000,
 		"method" : "面交",
 		"number" : "10000",
 		"img" : "img/product6.jpeg",
 		"popularity" : 8.0,
-		"location": "台中"
+		"location": "台中",
+		"explanation" : "想要參加相親，但是找不到西裝，找我借就對了。"
 	},
 	{
 		"name" : "行李箱（紅）",
 		"rent" : "$1/天",
 		"author" : "郭怡欣",
+		"post" :"provide",
 		"state" : 10,
 		"method" : "郵寄",
 		"number" : "1",
 		"img" : "img/product7.jpeg",
 		"popularity" : 3.0,
-		"location": "三重"
+		"location": "三重",
+		"explanation" : "剛好我也在賣行李箱，也賣不出去，租給大家。"
 	},
 	{
 		"name" : "睡袋（藍）",
 		"rent" : "$5478/天",
 		"author" : "邱天",
+		"post" : "find",
 		"state" : 0,
 		"method" : "宅配",
 		"number" : "60",
 		"img" : "img/product8.jpeg",
 		"popularity" : 8.7,
-		"location": "台北"
+		"location": "台北",
+		"explanation" : "想要有個溫暖的睡袋陪我度過炎熱的暑假。"
 	},
 	{
 		"name" : "聖誕帽（紅）",
 		"rent" : "$免費/天",
 		"author" : "許鈺屏",
+		"post" : "provide",
 		"state" : 0,
 		"method" : "面交（限帥哥）",
 		"number" : "10000",
 		"img" : "img/product9.jpeg",
 		"popularity" : 1.0,
-		"location": "雲林"
+		"location": "雲林",
+		"explanation" : "想要看帥哥，趕快找我面交。"
 	},
 	{
 		"name" : "卡式爐（紅）",
 		"rent" : "$5566/天",
 		"author" : "謝宗綺",
+		"post" : "find",
 		"state" : 1000,
 		"method" : "面交",
 		"number" : "1",
 		"img" : "img/product10.jpeg",
 		"popularity" : 10.0,
-		"location": "101大樓頂"
+		"location": "101大樓頂",
+		"explanation" : "5566不能亡。"
 	},
 	{
 		"name" : "鍋子",
 		"rent" : "$1234/天",
 		"author" : "游禮志",
+		"post" : "provide",
 		"state" : 50000,
 		"method" : "面交（限年輕正妹）",
 		"number" : "1000",
 		"img" : "img/product11.jpeg",
 		"popularity" : 10.0,
-		"location": "游禮志老師家"
+		"location": "游禮志老師家",
+		"explanation" : "各位同學期末加油！！"
 	},
 	{
 		"name" : "小米行動電源",
 		"rent" : "$9453/天",
 		"author" : "鄭皓恩",
+		"post" :"find",
 		"state" : 10,
 		"method" : "宅配",
 		"number" : "10",
 		"img" : "img/product12.jpeg",
 		"popularity" : 1.6,
-		"location": "莊敬二舍2212室"
+		"location": "莊敬二舍2212室",
+		"explanation" : "我室友很帥，大家快來看。"
 	}
 ]
