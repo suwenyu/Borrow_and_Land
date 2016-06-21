@@ -14,18 +14,16 @@
                 <div class="media" ng-repeat="country in countries | filter:query">
                 <div class="media-left media-middle">
                   <a href="#/{{country.name}}">
-                    <img class="media-object" src="{{country.img}}" width="100px" heigth="100px">
+                    <img class="media-object" src="#/{{country.img}}" width="100px" heigth="100px">
                   </a>
                 </div>
                 <div class="media-body">
                   <h4 class="media-heading"><a href="#/{{country.name}}">{{country.name}}</a></h4>
                   {{country.rent}}  出租人：{{country.author}}
                   <br><br>
-                  <div class="media-right" ng-class="{
-          'btn btn-primary btn-sm': country.post === 'provide', 
-          'btn btn-default btn-sm': country.post === 'find'}">
-                  {{country.post}}
-                </div>
+                  <h6><span ng-class="{
+          'label label-primary': country.post === 'provide', 
+          'label label-warning': country.post === 'find'}">{{country.post}}</span></h6>
 
                 </div>
                 <div class="media-right" ng-class="{
